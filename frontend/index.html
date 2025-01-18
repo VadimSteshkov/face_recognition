@@ -3,29 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="./src/assets/style.css">
   <title>Advanced Face Analysis</title>
 </head>
 <body>
 
+  <!-- Title Section -->
   <div class="program-title">
     <h1>Advanced Face Analysis</h1>
+    <button id="openPhotoAnalysis" class="action-button">Analyze Photo</button>
   </div>
 
-  
+  <!-- Photo Analysis Section -->
+  <div id="photo-analysis" style="display: none;">
+    <h1>Photo Analysis</h1>
+    <button id="backToMain" class="action-button">Back to Main</button>
+    <div style="margin-top: 15px;">
+      <input type="file" id="uploadPhoto" accept="image/*">
+      <img id="photoPreview" style="max-width: 400px; margin-top: 15px; display: none;">
+      <button id="analyzePhoto" class="action-button" style="display: none;">Analyze Photo</button>
+      
+    </div>
+    <h2>Analysis Results</h2>
+    <ul id="photo-analysis-results">
+      <!-- Analysis results will appear here -->
+    </ul>
+  </div>
+
+  <!-- Main Application Container -->
   <div class="app-container">
+    
+    <!-- Control Panel -->
     <div class="control-panel">
       <h2>Face Analysis Controls</h2>
       <div class="action-buttons">
-          <button id="startAnalysis" class="action-button">Start Analysis</button>
-          <button id="stopAnalysis"><i class="fas fa-power-off"></i></button>
+        <button id="startAnalysis" class="action-button">Start Analysis</button>
+        <button id="stopAnalysis"><i class="fas fa-power-off"></i></button>
       </div>
       
+      <!-- Canvas Toggle Option -->
       <div style="margin-top: 15px;">
         <label>
           <input type="checkbox" id="toggleCanvasPosition" /> Toggle Canvas Absolute Position
         </label>
       </div>
+      
+      <!-- Detector Options -->
       <div style="margin-top: 15px;">
         <h3>Detector Options</h3>
         <label>
@@ -37,28 +60,44 @@
           Tiny Face Detector
         </label>
       </div>
+
+      <!-- Clear Results Button -->
       <div style="margin-top: 15px;">
         <button id="clearResults" class="action-button" style="background-color: red; color: white;">Clear Results</button>
       </div>
-      
+
+      <!-- Face Comparison Options -->
+      <h3>Face Comparison</h3>
+      <label>
+        <input type="checkbox" id="enableComparison"> Enable Face Comparison
+      </label>
+      <input type="file" id="uploadImage" accept="image/*" style="display: none; margin-top: 10px;">
+      <button id="compareFaces" class="action-button" style="display: none; margin-top: 10px;">Compare Faces</button>
     </div>
     
+    <!-- Content Area -->
     <div class="content-area" style="position: relative;">
       <div class="video-container">
-        <video id="video" style="width: 900px; height: auto;" autoplay muted></video>
+        <video id="video" style="height: auto;" autoplay muted></video>
         <canvas id="overlay" style="top: 0; left: 0; z-index: 2; pointer-events: none; height: auto; width: 100%; position: absolute;"></canvas>
-      </div>
-    </div>
-  </div>
-  
-      <div class="results-container">
-        <h2>Analysis Results</h2>
-        <ul id="info-list">
-        </ul>
+        <img id="uploadedPreview" style="width: 400px; display: none;">
+        <canvas id="photoCanvas" style="pointer-events: none; height: auto; width: 100%; position: absolute;"></canvas>
       </div>
     </div>
   </div>
 
+  <!-- Results Section -->
+  <div class="results-container">
+    <h2>Analysis Results</h2>
+    <ul id="face-analysis-results">
+      <!-- Face analysis results will appear here -->
+    </ul>
+    <ul id="face-comparison-results">
+      <!-- Face comparison results will appear here -->
+    </ul>
+  </div>
+
+  <!-- Advanced Controls Section -->
   <div class="advanced-controls">
     <h2>Advanced Settings</h2>
     <div class="control-group">
@@ -70,11 +109,11 @@
       <label><input type="checkbox" id="enableLandmarks"> Enable Face Landmarks</label>
       <label><input type="checkbox" id="enableAgeGender"> Enable Age & Gender</label>
       <label><input type="checkbox" id="enableEmotions"> Enable Emotion Analysis</label>
-    </div>
+    </div> 
   </div>
-  
 
-  <script type="module" src="./src/main.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="src/main.js"></script>
   <script src="https://kit.fontawesome.com/b37f782a2a.js" crossorigin="anonymous"></script>
 </body>
 </html>

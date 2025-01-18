@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../src/assets/style.css">
+  <title>Photo Analysis</title>
+</head>
+<body>
+  <!-- Program Title Section -->
+  <div class="program-title">
+    <h1>Photo Analysis</h1>
+    <button id="backToMain" class="action-button">Back to Main</button>
+  </div>
+  
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Left Panel: Upload photo and analysis results -->
+    <div class="left-panel">
+      <!-- Drag-and-Drop Upload Box -->
+      <div class="Neon Neon-theme-dragdropbox">
+        <input style="z-index: 999; opacity: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0;" id="uploadPhoto" type="file" accept="image/*">
+        <div class="Neon-input-dragDrop">
+          <div class="Neon-input-inner">
+            <div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div>
+            <div class="Neon-input-text">
+              <h3>Drag & Drop a photo here</h3>
+              <span style="display:inline-block; margin: 15px 0">or</span>
+            </div>
+            <a class="Neon-input-choose-btn blue">Browse Photo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Analyze Photo Button -->
+      <button id="analyzePhoto" class="action-button" style="display: none; margin-top: 20px;">Analyze Photo</button>
+
+      <!-- Analysis Results -->
+      <div class="results-block">
+        <h2>Analysis Results</h2>
+        <ul id="photo-analysis-results">
+          <!-- Analysis results will appear here -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right Panel: Photo Preview and Overlay -->
+    <div class="right-panel">
+      <img id="photoPreview" style="max-width: 100%; margin-bottom: 15px; display: none; border-radius: 10px;">
+      <canvas id="overlay" style="top: 0; left: 0; z-index: 2; pointer-events: none; height: auto; width: 100%; position: absolute;"></canvas>
+    </div>
+  </div>
+  
+  <!-- Comparison Panel for Comparing Two Photos -->
+  <div class="comparison-panel">
+    <h2>Compare Photos</h2>
+    <div class="comparison-container">
+      
+      <!-- Left Upload Section -->
+      <div class="comparison-upload">
+        <div class="Neon Neon-theme-dragdropbox">
+          <input style="z-index: 999; opacity: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0;" id="uploadPhoto1" type="file" accept="image/*">
+          <div class="Neon-input-dragDrop">
+            <div class="Neon-input-inner">
+              <div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div>
+              <div class="Neon-input-text">
+                <h3>Photo 1</h3>
+                <span style="display:inline-block; margin: 15px 0">or</span>
+              </div>
+              <a class="Neon-input-choose-btn blue">Browse Photo</a>
+            </div>
+          </div>
+        </div>
+        <img id="photoPreview1" style="max-width: 400px; margin-top: 15px; display: none; border-radius: 10px;">
+        <canvas id="overlay1"></canvas>
+      </div>
+      
+      <!-- Right Upload Section -->
+      <div class="comparison-upload">
+        <div class="Neon Neon-theme-dragdropbox">
+          <input style="z-index: 999; opacity: 0; width: 100%; height: 100%; position: absolute; top: 0; left: 0;" id="uploadPhoto2" type="file" accept="image/*">
+          <div class="Neon-input-dragDrop">
+            <div class="Neon-input-inner">
+              <div class="Neon-input-icon"><i class="fa fa-file-image-o"></i></div>
+              <div class="Neon-input-text">
+                <h3>Photo 2</h3>
+                <span style="display:inline-block; margin: 15px 0">or</span>
+              </div>
+              <a class="Neon-input-choose-btn blue">Browse Photo</a>
+            </div>
+          </div>
+        </div>
+        <img id="photoPreview2" style="max-width: 400px; margin-top: 15px; display: none; border-radius: 10px;">
+        <canvas id="overlay2"></canvas>
+      </div>
+    </div>
+
+    <!-- Compare Photos Button -->
+    <button id="comparePhotos" class="action-button" style="margin-top: 20px;">Compare Photos</button>
+
+    <!-- Comparison Results -->
+    <h2>Comparison Results</h2>
+    <ul id="comparison-results">
+      <!-- Comparison results will appear here -->
+    </ul>
+  </div>
+
+  <!-- JavaScript Entry Point -->
+  <script type="module" src="../main.js"></script>
+</body>
+</html>
