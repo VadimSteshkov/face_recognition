@@ -27,13 +27,14 @@ The goal of the project is to create a **user-friendly, efficient, and privacy-f
 
 ### 1. Clone the Repository
 ```bash
-https://github.com/Ymeika/face_recognition.git
+git clone https://github.com/Ymeika/face_recognition.git
 cd face_recognition
 ```
 
 ### 2. Install Dependencies
 ```bash
 npm install
+npm install face-api.js
 ```
 
 ### 3. Download Pre-trained Models
