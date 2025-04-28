@@ -61,33 +61,6 @@ http://localhost:5173
 
 ---
 
-## Project in Action 📸
-
-### Multi-Face Photo Analysis
-![Multi Face Analysis](./images/multiface_analysis.png)
-
----
-
-### Facial Landmark Detection
-![Facial Landmarks](./images/facial_landmarks.png)
-
----
-
-### Real-Time Face Analysis
-![Real-Time Analysis](./images/real_time_analysis.png)
-
----
-
-### Face Comparison (Different People vs Same Person)
-![Face Comparison](./images/face_comparison.png)
-
----
-
-### Detailed Comparison Results
-![Comparison Results](./images/comparison_results.png)
-
----
-
 ## Contact 📞
 
 - **Vadim Steshkov** - [GitHub Profile](https://github.com/VadimSteshkov)
